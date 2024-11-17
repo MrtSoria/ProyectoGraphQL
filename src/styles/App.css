@@ -1,0 +1,383 @@
+.gp-add{
+    background: #e6e6e6;
+    border: none;
+    border-radius: 30%;
+    width: 5vw;
+    height: 5vw;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    box-shadow: 0 2px 10px black;
+    animation: appear .2s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    transition: .3s ease;
+}
+
+.gp-add h1{
+    font-size: 4em;
+    color: #222831;
+}
+
+.gp-add:hover{
+    scale: 1.05;
+    background: #42b883;
+}
+
+.gp-add:hover h1{
+    color: #e6e6e6;
+}
+
+.gp-card{
+    display: flex;    
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    padding: 20px;
+    min-width: 12.5vw;
+    min-height: 17.5vw;
+    border-radius: 6%;
+    background: #2d4059;
+    color: #e6e6e6;
+    box-shadow: 0 3px 5px black;
+    animation: appear .2s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    transition: .3s ease;
+}
+
+.gp-card.closed{
+    animation: disappear .2s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+
+.gp-card:hover{
+    scale: 1.025;
+    box-shadow: 0 0 15px #e6e6e6;
+}
+
+.gp-card-title{
+    align-self: center;
+    text-align: center;
+    margin: 1%;
+    position: absolute;
+    top: 5%;
+    color: #42b883;
+    text-shadow: 0 0 3px #42b883;
+    cursor: context-menu;
+    font-size: 180%;
+}
+
+.gp-card-autor{
+    align-self: center;
+    text-align: center;
+    position: absolute;
+    bottom: 60%;
+    margin: 0;
+    cursor: context-menu;
+    font-size: 1.3rem;
+}
+
+.gp-card-publishing{
+    margin: 0;
+    position: absolute;
+    bottom: 48%;
+    font-size: 1.2rem;
+    cursor: context-menu;
+}
+
+.gp-card-year{
+    margin: 0;
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 36%;
+    cursor: context-menu;
+}
+
+.gp-card-genre{
+    margin: 0;
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 24%;
+    cursor: context-menu;
+}
+
+.gp-card-buttons{
+    display: flex;
+    position: absolute;
+    bottom: 5%;
+    width: 12.5vw;
+    justify-content: space-between;
+}
+
+.gp-card-modify{
+    border-radius: 25px;
+    border: none;
+    font-size: large;
+    width: 5vh;
+    height: 5vh;
+    cursor: pointer;
+    background: none;
+    color: #e6e6e6;
+    transition: .3s ease;
+}
+
+.gp-card-modify:hover{
+    background: #4e688a;    
+}
+
+.gp-card-delete{
+    border-radius: 25px;
+    border: none;
+    font-size: large;
+    width: 5vh;
+    height: 5vh;
+    cursor: pointer;
+    background: none;
+    color: #e6e6e6;
+    transition: .3s ease;
+}
+
+.gp-card-delete:hover{
+    background: #4e688a; 
+}
+
+.gp-modal-overlay{
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    animation: fadeIn .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.gp-modal-overlay.closed{
+    animation: fadeOut .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.gp-modal-content{
+    z-index: 25;
+    position: fixed;
+    top: 5vh;    
+    width: 30vw;
+    height: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 25px 2px black;
+    border-radius: 6%;
+    background: #2d4059;
+    animation: slideIn .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.gp-modal-content.closed{
+    animation: slideOut .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.gp-modal-content h2{
+    color: #42b883;   
+    text-shadow: 0 0 3px #42b883;
+    font-size: 3em;
+    cursor: context-menu;
+}
+
+.gp-modal-content form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 80%;
+}
+
+.gp-modal-field{
+    background: none;
+    font-size: 1.5em;
+    font-style: italic;
+    border: none;
+    color: #e6e6e6;
+    border-bottom: 2px solid #e6e6e6;
+    transition: .3s ease;
+}
+
+.gp-modal-field::placeholder{
+    color: #e6e6e652
+}
+
+.gp-modal-field:focus{
+    outline: none;
+    border-bottom: 2px solid #42b883;
+}
+
+.gp-modal-field:focus::placeholder{
+    color: #42b883;
+}
+
+.gp-modal-confirm{
+    border-radius: 50%;
+    border: none;
+    width: 5vw;
+    height: 5vw;
+    align-self: center;
+    display: grid;
+    place-content: center;
+    font-size: 7em;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 1px 10px black;
+    transition: .3s ease;
+}
+
+.gp-modal-confirm:hover{
+    scale: 1.03;
+}
+
+.gp-filter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 1vw;
+    width: 25vw;
+    gap: 5%;
+}
+
+.gp-filter h2{
+    margin: 0;
+}
+
+.gp-filter-inputs{
+    background-color: #222831;
+    border-radius: 25px;
+    height: 3vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+}
+
+.gp-filter-inputs select{
+    width: 25%;
+    border-radius: 50px;
+    border: none;
+    text-indent: 5%;
+    transition: .2s ease;
+}
+
+.gp-filter-inputs select:hover{
+    opacity: .8;
+}
+
+.gp-filter-inputs input{
+    width: 50%;
+    border-radius: 50px;
+    text-indent: 5%;
+    border: none;
+    transition: .2s ease;
+}
+
+.gp-filter-inputs input:hover{
+    opacity: .8;
+}
+
+.gp-filter-confirm{
+    height: 3vh;
+    width: 3vh;
+    margin-right: 3%;
+    margin-left: 5%;
+    overflow: hidden;    
+    display: flex;
+    justify-content: center;
+    border: none;
+    transition: .2s ease;
+}
+
+.gp-filter-confirm:hover{
+    opacity: .8;
+}
+
+.gp-filter-confirm img{
+    height: 100%;
+}
+
+.gp-error-dialog{
+    position: fixed;
+    bottom: 1%;
+    left: 0.5%;
+    height: 8vh;
+    width: 20vw;
+    background-color: #ffcfd3;
+    color: #ad0213;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    z-index: 50;
+    animation: slideIn 0.1s ease-out forwards; 
+}
+
+.gp-error-dialog.closed{
+    animation: slideOut 0.1s ease-out forwards; 
+}
+
+.gp-error-dialog h2 {
+    margin: 0;
+}
+
+/* Animaciones */
+
+@keyframes slideIn {
+    0% {
+        transform:translateY(25%);
+        opacity: 0;
+      }
+    100% {
+        transform:translateY(0);
+        opacity: 1;
+      }
+}
+
+@keyframes slideOut {
+    0% {
+        transform:translateY(0);
+        opacity: 1;
+      }
+    100% {
+        transform:translateY(25%);
+        opacity: 0;
+      }
+}
+
+@keyframes appear {
+    0% {
+        transform: 
+            scale(0)
+    }
+    100% {
+        transform: 
+            scale(1)
+    }
+}
+
+@keyframes disappear {
+    0% {
+        transform: 
+            scale(1)
+    }
+    100% {
+        transform: 
+            scale(0)
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
